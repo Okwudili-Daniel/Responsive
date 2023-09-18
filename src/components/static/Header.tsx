@@ -9,6 +9,7 @@ const Header = () => {
       <Wrapper>
         <Menu><BiMenu /></Menu>
         <Logo src='https://zozothemes.com/html/layer/demo/images/logo-color.png' />
+        <Logo1 src ="https://zozothemes.com/html/layer/demo/images/logo-dark.png" />
         
         <Navhold>
           <Navs>Home</Navs>
@@ -29,14 +30,29 @@ const Header = () => {
 export default Header
 const Search = styled.div`
   font-size: 30px;
-  color: red;
+  color: gray;
   display: none;
+
+  @media screen and (max-width:1024px){
+    display: flex;
+  }
+
+  @media screen and (max-width:768px){
+    font-size: 25px;
+  }
 `
 const Menu = styled.div`
   font-size: 35px;
-  color: #fff;
+  color: black;
   cursor: pointer;
   display: none;
+
+  @media screen and (max-width:1024px){
+    display: flex;
+  }
+  @media screen and (max-width:768px){
+    font-size: 25px;
+  }
 `
 const Icon = styled.div`
   color: red;
@@ -53,12 +69,24 @@ const Navhold = styled.div`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `
 const Logo = styled.img`
   height: 35px;
+
+   @media screen and (max-width:1024px){
+    display: none;
+  }
+`
+const Logo1 = styled.img`
+  height: 35px;
+  display: none;
+
+   @media screen and (max-width:1024px){
+    display: flex;
+  }
 `
 const Wrapper = styled.div`
   display: flex;
@@ -66,6 +94,15 @@ const Wrapper = styled.div`
   height: 100%;
   align-items: center;
   justify-content: space-between;
+  /* z-index: -50; */
+  
+@media screen and (max-width: 1024px){
+  width: 98%;
+}
+@media screen and (max-width: 500px){
+  width: 95%;
+}
+
 `
 const Container = styled.div`
   display: flex;
@@ -73,4 +110,9 @@ const Container = styled.div`
   height: 80px;
   justify-content: center;
   position: fixed;
+
+  @media screen and (max-width: 1024px){
+  height: 60px;
+  background-color: #fff;
+}
 `

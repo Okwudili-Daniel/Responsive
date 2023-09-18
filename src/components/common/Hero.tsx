@@ -4,7 +4,8 @@ import img from "../../asset/bg-1.jpg"
 
 const Hero = () => {
   return (
-    <Container>
+    <div>
+      <Container>
       <Dark>
         <Wrapper>
         <Left>
@@ -22,6 +23,7 @@ const Hero = () => {
      </Wrapper>
       </Dark>
     </Container>
+    </div>
   )
 }
 
@@ -33,10 +35,23 @@ const Dark = styled.div`
     padding: 100px 0px;
   justify-content: center;
     display: flex;
+    @media screen and (max-width: 1024px) {
+      padding-top: 150px
+  }
+
+  @media screen and (max-width: 500px){
+    padding-top: 100px
+}
 `
 const Holder = styled.div`
   display: flex;
   margin-top: 35px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 320px){
+    justify-content: center;
+    flex-direction: column;
+  }
 `
 const Button = styled.button<{bg: string, wd: string, bd: string, ml: string}>`
   width: ${({ wd }) => wd};
@@ -47,11 +62,22 @@ const Button = styled.button<{bg: string, wd: string, bd: string, ml: string}>`
   border-radius: 100px;
   cursor: pointer;
   color: #fff;
+
+  @media screen and (max-width: 320px){
+    margin: 10px 0px;
+  }
 `
 const Img = styled.img`
   height: 95%;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
   @media screen and (max-width: 768px) {
       height: 35%;
+  }
+
+  @media screen and (max-width: 500px){
+    width: 100%;
   }
 `
 const Right = styled.div`
@@ -75,8 +101,11 @@ const Left = styled.div`
     font-size: 37px;
     font-weight: 600;
     margin-bottom: 25px;
+    @media screen and (max-width: 1024px) {
+      font-size: 45px;
+    };
     @media screen and (max-width: 768px) {
-      font-size: 30px;
+      font-size: 40px;
     };
     span{
       color:#e74c3c ;
@@ -87,9 +116,16 @@ const Left = styled.div`
     margin: 0;
     line-height: 31px;
     @media screen and (max-width: 768px) {
-      font-size: 13px;
-      width: 80%;
+      font-size: 15px;
+      width: 90%;
     }
+
+    @media screen and (max-width: 500px){
+    width: 95%;
+}
+  }
+  @media screen and (max-width: 1024px) {
+    width: 37%;
   }
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -103,6 +139,13 @@ const Wrapper = styled.div`
   align-items: center;
   margin-top: 10px;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 1024px){
+  width: 98%;
+}
+@media screen and (max-width: 500px){
+  width: 95%;
+}
 `
 
 const Container = styled.div`

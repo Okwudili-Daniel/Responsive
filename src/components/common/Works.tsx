@@ -11,8 +11,10 @@ const Work = () =>{
             <Container>
                 <Wrapper>
                     <Left>
-                        <Img ps="absolute" top="100" wd="50%" left="40px" Right=""src ={img}/>
-                        <Img ps="absolute" top="100" wd="60%" left="" Right="5px" src ={img2}/>
+                        <ImgWrapper>
+                        <Img ps="absolute" top="30px" wd="50%" left="90px" Right="" hi="90%" src ={img}/>
+                        <Img ps="absolute" top="0px" wd="60%" left="" Right="5px" hi ="100%" src ={img2}/>
+                        </ImgWrapper>
                     </Left>
                     <Right>
                         <Top>
@@ -38,7 +40,7 @@ const Work = () =>{
                                 </Note>
                             </Row1>
                             <Row2>
-                            <Note>
+                                <Note>
                                     <Icon bg="linear-gradient(#fc6551, #f54a61, #f0346d)"><TfiCommentAlt/></Icon>
                                     <Text>
                                         <h3>24/7 Support</h3>
@@ -67,6 +69,21 @@ const Work = () =>{
 }
 
 export default Work;
+const ImgWrapper =styled.div`
+    width: 100%;
+    height: 750px;
+    position: relative;
+    z-index: -2;
+
+    @media screen and (max-width: 1024px){
+        height: 600px;
+    }
+    /* @media screen and (max-width: 500px){
+        height: 600px;
+    } */
+
+`
+
 const Button = styled.button`
 color: #fff;
 background-color: #e74c3c;
@@ -75,6 +92,11 @@ border-radius: 40px;
 border: 0;
 font-size: 20px;
 font-weight: 400;
+
+@media screen and (max-width:768px){
+    padding: 15px 35px;
+    font-size: 15px;
+}
 `
 
 const Buttom = styled.div`
@@ -86,10 +108,18 @@ const Text = styled.div`
 h3{
     font-size: 25px;
     font-weight: 600;
+
+    @media screen and (max-width: 1024px){
+        font-size: 20px;
+    }
 }
 
 p{
     line-height: 30px;
+
+    @media screen and (max-width: 1024px){
+        font-size: 14px;
+    }
 }
 `
 
@@ -107,13 +137,30 @@ display: flex;
 align-items: center;
 justify-content: center;
 font-size: 35px;
+
+@media screen and (max-width: 1024px){
+    margin-top: -20px;
+    width: 120px;
+    height: 55px;
+    margin-right: 25px;
+    font-size: 30px;
+}
+@media screen and (max-width: 768px){
+   width: 70px;
+   height: 55px;
+   font-size: 25px
+}
 `
 
 const Note = styled.div`
-width: 45%;
+width: 48%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 500px){
+        width: 100%;
+    }
 
 `
 
@@ -122,6 +169,7 @@ width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 `
 
 const Row1 = styled.div`
@@ -130,6 +178,7 @@ width: 100%;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 `
 
 const Center = styled.div`
@@ -147,10 +196,20 @@ h2{
     font-weight: 700;
     color: #000000;
     margin-bottom: 20px;
+    @media screen and (max-width: 1024px){
+        font-size: 35px;
+        font-weight: 700;
+    }
+
     span{
         font-weight: 700;
         font-size: 40px;
         color:#e74c3c;
+
+        @media screen and (max-width: 1024px){
+        font-size: 35px;
+        font-weight: 700;
+    }
     }
 };
 
@@ -158,16 +217,22 @@ p{
     color: #a2a2a2;
     font-size: 18px;
     font-weight: 400;
+
+    @media screen and (max-width: 1024px){
+        font-size: 15px;
+        line-height: 30px;
+    }
 }
 
 `
 
-const Img = styled.img<{ps: string, top:string, wd: string, left: string, Right: string}>`
+const Img = styled.img<{ps: string, top:string, wd: string, left: string, Right: string, hi: string}>`
 position: ${({ps}) => ps};
 top: ${({top}) => top};
 left: ${({left}) => left};;
 Right: ${({Right}) => Right};;
 width: ${({wd}) => wd};
+height: ${({hi}) => hi};
 object-fit: cover;
 `
 
@@ -175,11 +240,17 @@ const Left = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-position: relative;
-background-color: green;
+/* background-color: red; */
 width: 40%;
 height: 100%;
 margin-top: 120px;
+
+@media screen and (max-width:768px){
+        width: 50%;
+    }
+@media screen and (max-width:500px){
+        width: 100%;
+    }
 `
 
 const Right = styled.div`
@@ -188,14 +259,26 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+
+@media screen and (max-width: 768px){
+    width: 100%;
+}
 `
 
 const Wrapper = styled.div`
 width: 90%;
 height: 100%;
 display: flex;
-align-items: center;
+/* align-items: center; */
 justify-content: space-between;
+flex-wrap: wrap;
+
+@media screen and (max-width: 1024px){
+  width: 98%;
+}
+@media screen and (max-width: 500px){
+  width: 95%;
+}
 `
 
 const Container = styled.div`
@@ -205,4 +288,8 @@ height: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
+
+@media screen and (max-width: 1024px){
+    padding: 40px 0;
+}
 `
